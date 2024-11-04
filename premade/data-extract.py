@@ -27,8 +27,8 @@ def process_files_in_parallel(files, folder_path, output_file):
 
 if __name__ == '__main__':
     folder_path = "C:/Users/Nikhilesh/Downloads/subsets/openwebtext"
-    output_file_train = "output_train.txt"
-    output_file_val = "output_val.txt"
+    output_file_train = "train_split.txt"
+    output_file_val = "val_split.txt"
     vocab_file = "vocab.txt"
 
     files = xz_files_in_dir(folder_path)
@@ -38,22 +38,17 @@ if __name__ == '__main__':
     files_train = files[:split_index]
     files_val = files[split_index:]
 
-    # Sampling a hundredth of the files for each split
     sample_rate = 0.01
     files_train_sampled = random.sample(files_train, max(1, int(len(files_train) * sample_rate)))
     files_val_sampled = random.sample(files_val, max(1, int(len(files_val) * sample_rate)))
 
-# Ensure output files are empty before appending
     open(output_file_train, 'w').close()
     open(output_file_val, 'w').close()
 
-# Process the sampled training files
     vocab_train = process_files_in_parallel(files_train_sampled, folder_path, output_file_train)
 
-# Process the sampled validation files
     vocab_val = process_files_in_parallel(files_val_sampled, folder_path, output_file_val)
 
-# Combine vocabularies (if needed) and write to vocab.txt
     vocab = vocab_train.union(vocab_val)
     with open(vocab_file, "w", encoding="utf-8") as vfile:
         for char in sorted(vocab):
