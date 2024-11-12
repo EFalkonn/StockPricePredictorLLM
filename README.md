@@ -33,3 +33,7 @@ Basically, this script is used to preprocess large text datasets by extracting a
 
 ### gpt-v1.ipynb:
 Designed to train a GPT language model.
+
+### training.py:
+Designed to train a GPT language model.
+
