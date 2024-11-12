@@ -9,3 +9,13 @@ LLM Creation: https://www.freecodecamp.org/news/how-to-build-a-large-language-mo
 https://github.com/Abhishekkr3003/Portfolio-Manager/tree/master
 
 
+## Contents of Premade Folder:
+
+### wizard_of_oz.txt:
+This hefty text file serves as a large dataset to train the Bigram Language Model, which is designed to predict the next character in a sequence based on the previous character.
+
+### bigram.ipynb:
+Idea is to train a model that can predict the next value in a sequence (e.g. stock prices) based on previous values
+
+
+
