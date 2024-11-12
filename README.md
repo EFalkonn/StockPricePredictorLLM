@@ -22,5 +22,6 @@ Training a Byte Pair Encoding (BPE) tokenizer. Reads val_split.txt and writes 5%
 The trained tokenizer is saved to bpe_tokenizer.json, which can be loaded from here for later use.
 
 
-
+### chatbot.py:
+This script is designed to create a chatbot using a GPT language model.
 
