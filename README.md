@@ -37,3 +37,5 @@ Designed to train a GPT language model.
 ### training.py:
 Designed to train a GPT language model.
 
+### vocab.txt:
+Vocabulary list
